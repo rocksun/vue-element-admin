@@ -61,7 +61,11 @@ export default {
     theme: '换肤',
     clipboardDemo: 'Clipboard',
     i18n: '国际化',
-    externalLink: '外链'
+    externalLink: '外链',
+
+    collections: '收藏品',
+    collectionsList: '收藏品列表',
+    createCollection: '创建收藏品'
   },
   navbar: {
     logOut: '退出登录',
