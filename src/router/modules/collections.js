@@ -17,8 +17,14 @@ const collectionsRouter = {
       meta: { title: 'collectionsList', icon: 'list', noCache: true }
     },
     {
+      path: 'cardlist',
+      component: () => import('@/views/collections/cardlist'),
+      name: 'CollectionsCardList',
+      meta: { title: 'collectionsCardList', icon: 'list', noCache: true }
+    },
+    {
       path: 'create',
-      component: () => import('@/views/example/create'),
+      component: () => import('@/views/collections/create'),
       name: 'CreateCollection',
       meta: { title: 'createCollection', icon: 'edit' }
     }
