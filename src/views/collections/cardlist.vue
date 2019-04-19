@@ -72,11 +72,7 @@ export default {
   top: 10px;
 }
 
-@media all {
-    .page-break { display: none; }
-}
-
 @media print {
-    .page-break { display: block; page-break-before: auto; }
+  .el-col {page-break-inside: avoid;}
 }
 </style>
