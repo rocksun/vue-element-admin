@@ -11,7 +11,7 @@
 
     <div id="cardlist">
       <el-row :gutter="5">
-        <el-col v-for="coll in list" :key="coll.ID" :span="8">
+        <el-col v-for="coll in list" :key="coll.code" :span="8">
           <collection-card :collection="coll" />
         </el-col>
       </el-row>

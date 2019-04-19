@@ -11,6 +11,12 @@ const collectionsRouter = {
   },
   children: [
     {
+      path: 'repos',
+      component: () => import('@/views/repos/list'),
+      name: 'ReposList',
+      meta: { title: 'reposList', icon: 'list', noCache: true }
+    },
+    {
       path: 'list',
       component: () => import('@/views/collections/list'),
       name: 'CollectionsList',

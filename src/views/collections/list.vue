@@ -54,9 +54,9 @@
         </template>
       </el-table-column>
 
-      <el-table-column width="180px" align="center" label="Collect Date">
+      <el-table-column width="180px" align="center" label="Collect Time">
         <template slot-scope="scope">
-          <span>{{ scope.row.collectDate | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{ scope.row.time | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
 

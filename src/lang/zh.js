@@ -66,7 +66,9 @@ export default {
     collections: '收藏品',
     collectionsList: '收藏品列表',
     createCollection: '创建收藏品',
-    collectionsCardList: '收藏品卡片'
+    collectionsCardList: '收藏品卡片',
+
+    reposList: '仓库'
   },
   navbar: {
     logOut: '退出登录',
@@ -137,6 +139,13 @@ export default {
     cancel: '取 消',
     confirm: '确 定'
   },
+
+  repo: {
+    name: '名称',
+    location: '地点',
+    description: '描述'
+  },
+
   collection: {
     name: '品名',
     type: '品类',
