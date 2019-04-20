@@ -23,3 +23,10 @@ export function updateRepo(data) {
     data
   })
 }
+
+export function deleteRepo(id) {
+  return request({
+    url: '/repos/' + id,
+    method: 'delete'
+  })
+}

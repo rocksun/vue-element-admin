@@ -71,6 +71,9 @@
           <el-button type="primary" size="mini" @click="handleUpdate(row)">
             {{ $t('table.edit') }}
           </el-button>
+          <el-button type="primary" size="mini" @click="handleDelete(row)">
+            {{ $t('table.delete') }}
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -101,7 +104,7 @@
 </template>
 
 <script>
-import { fetchList, createRepo, updateRepo } from '@/api/repos'
+import { fetchList, createRepo, updateRepo, deleteRepo } from '@/api/repos'
 import waves from '@/directive/waves' // Waves directive
 
 export default {
@@ -224,6 +227,38 @@ export default {
             })
           })
         }
+      })
+    },
+    handleDelete(row) {
+      this.$confirm('此操作将永久删除该仓库, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.listLoading = true
+        deleteRepo(row.id).then(() => {
+          for (const v of this.list) {
+            if (v.id === row.id) {
+              const index = this.list.indexOf(v)
+              this.list.splice(index, 1)
+              this.listLoading = false
+              break
+            }
+          }
+          this.$notify({
+            title: '成功',
+            message: '删除成功',
+            type: 'success',
+            duration: 2000
+          })
+        })
+      }).catch(() => {
+        this.$notify({
+          title: '取消',
+          message: '已经取消删除',
+          type: 'success',
+          duration: 2000
+        })
       })
     }
   }
